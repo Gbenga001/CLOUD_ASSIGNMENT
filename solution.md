@@ -4,7 +4,7 @@
 
 'sudo useradd -m -s/usr/bin/bash/ altschool'
 
-![screenshot of sudoadd](SCREENSHOTS\Screenshot1.png)
+![screenshot of sudoadd](SCREENSHOTS/Screenshot1.png)
 
 
 **create a passowrd for the user**
@@ -95,4 +95,4 @@ M.**Disable root login for ssh**
 
  'sudo vi /etc/ssh/sshd_config'
 
- ![last commands](SCREENSHOTS\Screenshot2.png)
+ ![last commands](SCREENSHOTS/Screenshot2.png)

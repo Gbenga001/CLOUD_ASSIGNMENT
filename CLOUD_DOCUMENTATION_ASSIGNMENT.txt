@@ -1,0 +1,72 @@
+Your login name: altschool i.e., home directory /home/altschool. The home directory contains the following sub-directories: code, tests, personal, misc Unless otherwise specified, you are running commands from the home directory.
+
+a.Change directory to the tests directory using absolute pathname
+
+sudo useradd -m -s/usr/bin/bash/ altschool
+
+create a passowrd for the user 
+
+sudo passwd altschool 
+then you give it a password
+
+switch to the altschool user
+su altschool
+
+give sudo priviledge to the altschool user
+sudo usermod -aG sudo altschool
+
+to check where we are according to the assignment,use the tider sign below
+cd ~     you can also type pwd
+
+make a directory containing code tests personal misc
+mkdir code tests personal misc
+
+click ls to list out the content
+
+b.Change directory to the tests directory using relative pathname
+cd /home/altschoolcloudengineering/tests
+cd ./tests
+
+
+c.Use echo command to create a file named fileA with text content ‘Hello A’ in the misc directory
+ echo "Hello A" > /home/altschoolcloudengineering/misc/fileA
+
+to display HELLO A
+cat /home/altschoolcloudengineering/misc/fileA
+
+d.Create an empty file named fileB in the misc directory. Populate the file with a dummy content afterwards
+ vi fileB type i for insert mode and then you fill in the content. Press esc key to leave then :wq to save and exit insert mode.
+to display the content you just filled in vim, type cat fileB to show what you typed
+
+
+e.Copy contents of fileA into fileC
+cp fileA fileC    then type ls to list/display out the content
+
+f.Move contents of fileB into fileD
+ mv fileB fileD   then you type ls to list/display it out      N.B the move command cuts out fileB into fileD hence when u type ls..no fileB to display
+
+
+g.Create a tar archive called misc.tar for the contents of misc directory
+tar -cvf misc.tar *
+once you click enter,then ls command,it will list it out
+
+h.Compress the tar archive to create a misc.tar.gz file
+gzip misc.tar  then type ls to be sure it has been compressed  
+
+
+I. Create a user and force the user to change his/her password upon login
+sudo useradd kemi 
+sudo chage -d 0 kemi to force the user to change her password
+
+J. Lock a users password
+sudo passwd -l kemi   and to confirm type  sudo cat /etc/shadow | grep kemi
+the exclamation mark ! shows the users password has been locked.
+to unlock use sudo passwd -u kemi 
+
+K. Create a user with no login shell
+sudo useradd -s /usr/sbin/nologin valentine
+
+L. Disable password based authentication for ssh
+sudo vi ssh
+
+M. Disable root login for ssh
